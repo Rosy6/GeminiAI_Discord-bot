@@ -1,0 +1,6 @@
+/.env
+.DS_Store
+allowed_channels.json
+__pycache__
+.vs/
+saved_chat

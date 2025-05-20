@@ -22,9 +22,9 @@
 8. これを三回繰り返す
 
 
-1. GitHubのソースコードをDLする $ git clone git@github.com:Rosy6/GeminiAI_Discord-bot.git 
+1. GitHubのソースコードをDLする$ git clone git@github.com:Rosy6/GeminiAI_Discord-bot.git
 2. .envファイルを作成し、先ほど取得したGeminiのAPIキーとDiscordのトークンを書き込む。
-
+```
 $  ls ./
 bot_main.py		Dockerfile		shared
 docker-compose.yml	requirements.txt
@@ -36,16 +36,19 @@ GEMINI_TOKEN3="YOUR-GEMINI-API-KEY3"
 DISCORD_TOKEN1="YOUR-DISCORDBOT-TOKEN1"
 DISCORD_TOKEN2="YOUR-DISCORDBOT-TOKEN2"
 DISCORD_TOKEN3="YOUR-DISCORDBOT-TOKEN3"
-
+```
 2. Docker環境を整備する。（参考：https://qiita.com/haveAbook/items/0d0ae20a19214f65e7cd ）
 
 3. Dockerを起動する
+```
 $ ls ./
 bot_main.py		Dockerfile		shared
 docker-compose.yml	requirements.txt
 $ docker compose up --build
-
-# コマンドリスト(メンションの後にこれらのコマンドを打ち込む)
+```
+# コマンドリスト
+メンションの後にこれらのコマンドを打ち込む
+```
 !check,ボットがこのチャンネルを監視しているか確認。
 !list_channel,設定されている応答チャンネルの一覧を表示。
 !send_config,チャンネルの設定ファイルを送信。
@@ -59,3 +62,4 @@ $ docker compose up --build
 !reset_buffered：現在のメッセージバッファ(AIへ未送信の非メンションメッセージ)の内容を削除。
 !send_last,最後に記憶しているメッセージを送信。
 !send_lastdata：最後の会話でのAIのメタデータを送信
+```

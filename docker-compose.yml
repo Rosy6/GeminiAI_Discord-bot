@@ -1,0 +1,31 @@
+x-common:
+  &default_bot
+  build: .
+  dns:
+    - 8.8.8.8
+    - 1.1.1.1
+  env_file:
+    - .env
+  volumes:
+    - ./shared:/app/shared
+  restart: unless-stopped
+  tty: true
+
+services:
+  botB:
+    <<: *default_bot
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN_BALTHASAR}
+      - GEMINI_TOKEN=${GEMINI_TOKEN_BALTHASAR}
+
+  botC:
+    <<: *default_bot
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN_CASPER}
+      - GEMINI_TOKEN=${GEMINI_TOKEN_CASPER}
+
+  botM:
+    <<: *default_bot
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN_MELCHIOR}
+      - GEMINI_TOKEN=${GEMINI_TOKEN_MELCHIOR}
